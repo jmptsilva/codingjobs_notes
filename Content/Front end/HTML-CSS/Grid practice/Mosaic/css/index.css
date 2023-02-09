@@ -1,0 +1,144 @@
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: flex-end;
+}
+
+p {
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 45px;
+  margin: 0;
+  padding:  0.5em;
+}
+
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  height: 100vh;
+  grid-template-areas:
+  "thirteen thirteen nine nine eighteen one one twenty twenty fifteen"
+  "thirteen thirteen five six six one one eleven three three"
+  "twenty-two twenty-two five six six eight eight eleven three three"
+  "seven sixteen sixteen two two nineteen fourteen fourteen twenty-one twenty-one"
+  "twenty-four twenty-four seventeen two two four four twenty-three twenty-one twenty-one"
+  "twenty-four twenty-four seventeen twelve twelve four four twenty-three ten ten";
+}
+
+.lightgreen {
+  background-color: lightgreen;
+}
+
+.lightyellow {
+  background-color: lightyellow;
+}
+
+.yellow {
+  background-color: rgba(228, 228, 30, 0.774);
+}
+
+.lightblue {
+  background-color: lightblue;
+}
+
+.lightsalmon {
+  background-color: lightsalmon;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.ten {
+  grid-area: ten;
+}
+
+.eleven {
+  grid-area: eleven;
+}
+
+.twelve {
+  grid-area: twelve;
+}
+
+.thirteen {
+  grid-area: thirteen;
+}
+
+.fourteen {
+  grid-area: fourteen;
+}
+
+.fifteen {
+  grid-area: fifteen;
+}
+
+.sixteen {
+  grid-area: sixteen;
+}
+
+.seventeen {
+  grid-area: seventeen;
+}
+
+.eighteen {
+  grid-area: eighteen;
+}
+
+.nineteen {
+  grid-area: nineteen;
+}
+
+.twenty {
+  grid-area: twenty;
+}
+
+.twenty-one {
+  grid-area: twenty-one;
+}
+
+.twenty-two {
+  grid-area: twenty-two;
+}
+
+.twenty-three {
+  grid-area: twenty-three;
+}
+
+.twenty-four {
+  grid-area: twenty-four;
+}

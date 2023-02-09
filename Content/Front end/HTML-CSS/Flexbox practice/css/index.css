@@ -1,0 +1,103 @@
+body {
+    background-color: black;
+}
+
+.w-800 {
+    width: 1200px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex.row {
+    flex-direction: row;
+}
+
+.flex.column {
+    flex-direction: column;
+}
+
+.black-box-card {
+    background-color: brown;
+    height: 200px;
+    width: 300px;
+}
+
+.flex.gap-0 {
+    gap: 0px;
+}
+
+.flex.gap-1 {
+    gap: 4px;
+}
+
+.flex.gap-2 {
+    gap: 8px;
+}
+
+.flex.gap-3 {
+    gap: 16px;
+}
+
+.flex.gap-4 {
+    gap: 32px;
+}
+
+.flex.gap-5 {
+    gap: 64px;
+}
+
+.logo {
+    height: 100px;
+    width: 200px;
+}
+
+.flex.jc-sb {
+    justify-content: space-between;
+}
+
+.box {
+    background-color: brown;
+    height: 50px;
+    width: 100px;
+}
+
+.title {
+    height: 80px;
+    width: 150px;
+}
+
+.subtitle {
+    height: 80px;
+    width: 150px;
+}
+
+.button {
+    height: 80px;
+    width: 150px;
+}
+
+.ai-fs {
+    align-items: flex-start;
+}
+
+.ai-fe {
+    align-items: flex-end;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.text {
+    background-color: brown;
+    height: 20px;
+    width: 140px;
+}
+
+.number {
+    background-color: brown;
+    height: 80px;
+    width: 180px;
+}

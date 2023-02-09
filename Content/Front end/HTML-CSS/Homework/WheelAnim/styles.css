@@ -1,0 +1,46 @@
+body {
+    background-color: aquamarine;
+    margin: 0px;   
+}
+
+.container {
+    height: 480px;
+    margin-top: 360px;
+    margin-bottom: 360px;
+}
+
+.out-wheel {
+    border: 90px solid black;
+    border-radius: 50%;
+    height: 300px;
+    margin: auto;
+    position: relative;
+    width: 300px;
+    
+}
+
+.inn-wheel {
+    position: absolute;
+    border: 12px solid;
+    border-radius: 50%;
+    height: 50px;
+    left: 113px;
+    top: 113px;
+    width: 50px;
+}
+
+.tire-marks {
+    animation: wheel-mov linear 10s infinite;
+    border: 16px dashed black;
+    border-radius: 50%;
+    height: 478px;
+    left: -105px;
+    position: absolute;
+    top: -105px;
+    width: 478px;
+}
+
+@keyframes wheel-mov {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}

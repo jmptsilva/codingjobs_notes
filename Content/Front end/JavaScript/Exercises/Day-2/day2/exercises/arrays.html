@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+              - prompt the user for multiple numbers (4 numbers maybe)
+              - store the numbers in two different arrays depending if the number is <= 10 or > 10
+              - display the two arrays at the end with console.logs
+
+              - try to move the repeating logic in a function
+              */
+
+      const lte10 = [];
+      const gt10 = [];
+
+      function askNb() {
+        const nb1 = prompt("give me a number");
+        if (nb1 <= 10) {
+          lte10.push(nb1);
+        } else {
+          gt10.push(nb1);
+        }
+      }
+      
+      for (let index = 1; index <= 4; index++) {
+        askNb();
+      }
+
+      console.log(lte10, gt10);
+    </script>
+  </body>
+</html>

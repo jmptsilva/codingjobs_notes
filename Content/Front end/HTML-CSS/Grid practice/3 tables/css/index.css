@@ -1,0 +1,85 @@
+.grid-one {
+  display: grid;
+  grid-template-columns: 100px;
+  grid-template-rows: repeat(2, 60px) repeat(2, 120px) repeat(3, 100px);
+  grid-template-areas:
+    "Header"
+    "Menu"
+    "Hero"
+    "Main"
+    "Banner"
+    "Extra"
+    "Image";
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: 80px 160px 80px;
+  grid-template-rows: 60px 250px 250px 125px 125px;
+  grid-template-areas:
+    "Header Header Header"
+    "Hero Hero Hero"
+    "Menu Main Main"
+    "Menu Banner Banner"
+    "Menu Extra Image";
+}
+
+.grid-three {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: 60px 300px repeat(3, 120px);
+  grid-template-areas:
+    "Header Menu Menu Menu"
+    "Hero Hero Hero Hero"
+    "Main Main . Image"
+    "Main Main . Extra"
+    "Banner Banner Banner Banner";
+}
+
+.header {
+  grid-area: Header;
+  background-color: black;
+}
+
+.menu {
+  grid-area: Menu;
+  background-color: red;
+}
+
+.hero {
+  grid-area: Hero;
+  background-color: blue;
+}
+
+.main {
+  grid-area: Main;
+  background-color: grey;
+}
+
+.banner {
+  grid-area: Banner;
+  background-color: yellow;
+}
+
+.extra {
+  grid-area: Extra;
+  background-color: green;
+}
+
+.image {
+  grid-area: Image;
+  background-color: aqua;
+}
+
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+.row {
+  flex-direction: row;
+}
+.gap-2 {
+  gap: 12px;
+}

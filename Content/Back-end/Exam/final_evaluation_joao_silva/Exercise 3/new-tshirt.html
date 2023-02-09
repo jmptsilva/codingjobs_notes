@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a new t-shirt</title>
+    <link rel="stylesheet" href="css/global.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Insert new tshirt in db</h2>
+      <div id="result"></div>
+
+      <form method="post">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" placeholder="Name" /><br />
+
+        <label for="price">Price: </label>
+        <input type="text" name="price" id="price" placeholder="Price" /><br />
+
+        <label for="color">Color: </label>
+        <input type="text" name="color" id="color" placeholder="Color" /><br />
+
+        <label for="size">Size: </label>
+        <select name="size">
+          <option value="">--</option>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+        <div class="divider"></div>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="10"
+          placeholder="Item description"
+        ></textarea>
+
+        <input type="submit" name="submitBtn" value="Insert" />
+      </form>
+    </div>
+    <script>
+      document
+        .querySelector("form")
+        .addEventListener("submit", function (event) {
+          // Prevent the page to 'refresh'
+          event.preventDefault();
+          // let form = document.getElementById('form');
+          let form = this;
+
+          fetch("insert-tshirt.php", {
+            method: "post",
+            body: new FormData(form),
+          })
+            .then((res) => res.json())
+            .then(function (result) {
+              // Once AJAX call is done
+              console.log(result);
+
+              if (result.success)
+                document.getElementById("result").innerHTML =
+                  "<span style='color:green'>" + result.success + "</span>";
+              else {
+                let errors =
+                  "<span style='color:red'>" + result.name + "</span><br>";
+                errors +=
+                  "<span style='color:red'>" + result.price + "</span><br>";
+                errors +=
+                  "<span style='color:red'>" + result.color + "</span><br>";
+                errors +=
+                  "<span style='color:red'>" + result.size + "</span><br>";
+                errors +=
+                  "<span style='color:red'>" +
+                  result.description +
+                  "</span><br>";
+
+                document.getElementById("result").innerHTML = errors;
+              }
+            });
+        });
+    </script>
+  </body>
+</html>

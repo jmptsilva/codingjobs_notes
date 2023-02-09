@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * - create an array of lowercase strings (fruits or car brands, etc.)
+       * - display (console.log) every 2 elements of the array with a for loop
+       *
+       *- try to display every 2 elements of the array, but in reverse (starting from the end)
+       - try to display each string in uppercase
+       *
+       */
+      const fruits = [
+        "apple",
+        "orange",
+        "banana",
+        "coconut",
+        "tomato",
+        "kiwi",
+        "watermelon",
+      ];
+
+      for (let index = 0; index < fruits.length; index += 2) {
+        console.log(fruits[index].toUpperCase());
+      }
+
+      /**
+       * try to display (console.log) all the elements of the array using:
+       * - a for..of loop
+       * - a Array.forEach()
+       *
+       * Try to console.log only every 2 items (for the foreach)
+       * */
+      for (const item of fruits) {
+        console.log("inside for..of", item);
+      }
+
+      // all elements with a foreach
+      fruits.forEach(function (item, index) {
+        console.log("inside the foreach", item, index);
+      });
+
+      // every two elements starting at the first with a foreach
+      fruits.forEach(function (item, index) {
+        if (index % 2 === 0) {
+          console.log("inside the foreach (every 2)", item, index);
+        }
+      });
+
+      for (let index = fruits.length - 1; index >= 0; index -= 2) {
+        const uppercaseString = fruits[index].toUpperCase();
+        console.log(uppercaseString);
+      }
+    </script>
+  </body>
+</html>

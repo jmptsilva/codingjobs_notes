@@ -1,0 +1,351 @@
+:root {
+  --bgc-dark: rgb(42, 41, 41);
+  --text: white;
+  --click-text-red: rgb(223, 0, 0);
+  --descrip-text: rgb(132, 128, 128);
+}
+
+body {
+  background-color: var(--bgc-dark);
+  color: var(--text);
+}
+
+/* Opening this week Grid*/
+.newm-grid {
+  display: grid;
+  row-gap: 50px;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(14, auto);
+  grid-template-areas:
+    "week-section-title"
+    "week-fm-list"
+    "filters1"
+    "filters2"
+    "filters3"
+    "filters4"
+    "nmovies-card1"
+    "nmovies-card2"
+    "nmovies-card3"
+    "nmovies-card4"
+    "nmovies-card5"
+    "nmovies-card6"
+    "nmovies-card7"
+    "nmovies-card8";
+}
+
+.filters1,
+.filters2,
+.filters3,
+.filters4 {
+  justify-self: flex-start;
+}
+
+.week-section-title,
+.cs-section-title {
+  justify-self: flex-start;
+}
+
+.week-fm-list,
+.cs-fm-list {
+  justify-self: flex-start;
+}
+
+/* Coming soon Grid */
+.csm-grid {
+  display: grid;
+  row-gap: 50px;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "cs-section-title"
+    "cs-fm-list"
+    "cs-movies-card1"
+    "cs-movies-card2"
+    "cs-movies-card3"
+    "cs-movies-card4";
+}
+
+/* footer grid */
+.footer-grid {
+  display: grid;
+  row-gap: 50px;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+    "company-logo"
+    "utility-links"
+    "subscribe-area"
+    "socnet-links"
+    "cr-policies";
+}
+
+.utilities-grid {
+  display: grid;
+  row-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "about movies gift-card"
+    "cinemas showtime online-paument"
+    "events services media-center"
+    "careers contact help-center";
+}
+
+@media only screen and (min-width: 786px) {
+  .newm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(7, auto);
+    grid-template-areas:
+      "week-section-title week-fm-list"
+      "filters1 filters2"
+      "filters3 filters4"
+      "nmovies-card1 nmovies-card2"
+      "nmovies-card3 nmovies-card4"
+      "nmovies-card5 nmovies-card6"
+      "nmovies-card7 nmovies-card8";
+  }
+  .csm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "cs-section-title cs-fm-list"
+      "cs-movies-card1 cs-movies-card2"
+      "cs-movies-card3 cs-movies-card4";
+  }
+  .footer-grid {
+    display: grid;
+    row-gap: 50px;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "company-logo company-logo"
+      "utility-links utility-links"
+      "subscribe-area socnet-links"
+      "cr-policies cr-policies";
+  }
+
+  .week-fm-list,
+  .cs-fm-list {
+    justify-self: end;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .newm-grid {
+    display: grid;
+    column-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "week-section-title week-section-title week-section-title week-fm-list"
+      "filters1 filters2 filters3 filters4"
+      "nmovies-card1 nmovies-card2 nmovies-card3 nmovies-card4"
+      "nmovies-card5 nmovies-card6 nmovies-card7 nmovies-card8";
+  }
+  .csm-grid {
+    display: grid;
+    column-gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      "cs-section-title cs-section-title cs-section-title cs-fm-list"
+      "cs-movies-card1 cs-movies-card2 cs-movies-card3 cs-movies-card4";
+  }
+  .footer-grid {
+    display: grid;
+    row-gap: 50px;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      "company-logo utility-links subscribe-area"
+      "cr-policies . socnet-links";
+  }
+
+  .company-logo,
+  .cr-policies {
+    justify-self: flex-start;
+  }
+  .subscribe-area,
+  .socnet-links {
+    justify-self: flex-end;
+  }
+}
+
+/*grid areas week section*/
+.week-section-title {
+  grid-area: week-section-title;
+}
+.week-fm-list {
+  grid-area: week-fm-list;
+}
+.filters1 {
+  grid-area: filters1;
+}
+.filters2 {
+  grid-area: filters2;
+}
+.filters3 {
+  grid-area: filters3;
+}
+.filters4 {
+  grid-area: filters4;
+}
+.nmovies1 {
+  grid-area: nmovies1;
+}
+.nmovies2 {
+  grid-area: nmovies2;
+}
+.nmovies3 {
+  grid-area: nmovies3;
+}
+.nmovies4 {
+  grid-area: nmovies4;
+}
+.nmovies5 {
+  grid-area: nmovies5;
+}
+.nmovies6 {
+  grid-area: nmovies6;
+}
+.nmovies7 {
+  grid-area: nmovies7;
+}
+.nmovies8 {
+  grid-area: nmovies8;
+}
+
+/* Grid areas coming soon section*/
+.cs-section-title {
+  grid-area: cs-section-title;
+}
+.cs-fm-list {
+  grid-area: cs-fm-list;
+}
+.cs-movies1 {
+  grid-area: cs-movies1;
+}
+.cs-movies2 {
+  grid-area: cs-movies2;
+}
+.cs-movies3 {
+  grid-area: cs-movies3;
+}
+.cs-movies4 {
+  grid-area: cs-movies4;
+}
+
+/* Grid areas utlities links on footer*/
+.about {
+  grid-area: about;
+}
+.movies {
+  grid-area: movies;
+}
+.gift-card {
+  grid-area: gift-card;
+}
+.cinemas {
+  grid-area: cinemas;
+}
+.showtime {
+  grid-area: showtime;
+}
+.online-paument {
+  grid-area: online-paument;
+}
+.events {
+  grid-area: events;
+}
+.services {
+  grid-area: services;
+}
+.media-center {
+  grid-area: media-center;
+}
+.careers {
+  grid-area: careers;
+}
+.contact {
+  grid-area: contact;
+}
+.help-center {
+  grid-area: help-center;
+}
+
+/* grid are in footer*/
+
+.company-logo {
+  grid-area: company-logo;
+}
+.utility-links {
+  grid-area: utility-links;
+}
+.subscribe-area {
+  grid-area: subscribe-area;
+}
+.socnet-links {
+  grid-area: socnet-links;
+}
+.cr-policies {
+  grid-area: cr-policies;
+}
+
+/* custom rules*/
+
+/* font colors*/
+.footer-grid,
+.movie-dur,
+.movie-genre {
+  color: var(--descrip-text);
+}
+
+.click-red,
+.subscribe-submit {
+  color: var(--click-text-red);
+}
+
+.subscribe-title {
+  color: var(--text);
+}
+
+/* spacing */
+
+.footer-container {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.d-flex.flex-column.r-gap-1 {
+    row-gap: 10px;
+}
+.r-gap-2 {
+    row-gap: 24px;
+}
+.r-gap-3 {
+    row-gap: 48px;
+}
+
+.d-flex.c-gap-1 {
+    column-gap: 10px;
+}
+.d-flex.c-gap-2 {
+    column-gap: 24px;
+}
+.d-flex.c-gap-3 {
+    column-gap: 48px;
+}
+
+h1.movie-title {
+    font-size: 80px;
+}

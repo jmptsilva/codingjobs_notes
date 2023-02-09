@@ -1,0 +1,142 @@
+/* layout rules*/
+
+* {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+}
+.row {
+  flex-direction: row;
+}
+.jc-right {
+  justify-content: right;
+}
+.jc-left {
+  justify-content: left;
+}
+.jc-center {
+  justify-content: center;
+}
+.jc-sa {
+  justify-content: space-around;
+}
+.jc-se {
+  justify-content: space-evenly;
+}
+.ai-center {
+  align-items: center;
+}
+.ai-fe {
+  align-items: flex-end;
+}
+.ai-fs {
+  align-items: flex-start;
+}
+
+.gap-0 {
+  grid-gap: 5px;
+}
+.gap-1 {
+  grid-gap: 10px;
+}
+.gap-2 {
+  grid-gap: 15px;
+}
+
+.padding-0 {
+  padding: 2px;
+}
+.padding-1 {
+  padding: 6px;
+}
+.padding-2 {
+  padding: 10px;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: 1fr repeat(6, 0.6fr);
+  grid-template-rows: 120px repeat(2, 400px);
+  grid-template-areas:
+  "title navbar navbar navbar navbar account account"
+  "navtab w-summ w-summ w-summ my-w my-w my-w"
+  "support mng-stats mng-stats persl persl latst-t latst-t";
+}
+
+.title {
+  grid-area: title;
+}
+.navbar {
+  grid-area: navbar;
+}
+.account {
+  grid-area: account;
+}
+.navtab {
+  grid-area: navtab;
+}
+.w-summ {
+  grid-area: w-summ;
+}
+.my-w {
+  grid-area: my-w;
+}
+.support {
+  grid-area: support;
+}
+.mng-stats {
+  grid-area: mng-stats;
+}
+.persl {
+  grid-area: persl;
+}
+.latst-t {
+  grid-area: latst-t;
+}
+
+/* To test*/
+
+.placeholder {
+  border: 2px white solid;
+  height: 50px;
+  width: 120px;
+}
+
+.s-placeholder {
+  border: 2px white solid;
+  height: 40px;
+  width: 80px;
+}
+
+.sq-placeholder {
+  border: 2px white solid;
+  height: 40px;
+  width: 40px;
+}
+
+
+/* style rules */
+
+
+.round-border {
+  border-radius: 15%;
+}
+.darker-bcg {
+  background-color: rgba(17, 17, 102, 0.719);
+}
+.dark-bcg {
+  background-color: rgb(37, 37, 68);
+}
+h1 {
+  color: white;
+  size: 10px;
+}
+.main-logo {
+  height: 50px;
+  width: 50px;
+}

@@ -1,0 +1,190 @@
+:root {
+  --bgc-dark: rgb(42, 41, 41);
+  --text: white;
+  --click-text-red: rgb(223, 0, 0);
+  --descrip-text: rgb(132, 128, 128);
+}
+
+body {
+  background-color: var(--bgc-dark);
+  color: var(--text);
+}
+
+
+
+/* custom rules*/
+
+.poster {
+  height: 450px;
+  background-color: rgb(106, 106, 106);
+}
+
+/* font colors*/
+.footer-grid,
+.movie-dur,
+.movie-genre {
+  color: var(--descrip-text);
+}
+
+.click-red,
+.subscribe-submit {
+  color: var(--click-text-red);
+}
+
+.subscribe-title {
+  color: var(--text);
+}
+
+/* spacing */
+
+.footer-container {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.d-flex.flex-column.r-gap-1 {
+    row-gap: 10px;
+}
+.r-gap-2 {
+    row-gap: 24px;
+}
+.r-gap-3 {
+    row-gap: 48px;
+}
+
+.d-flex.c-gap-1 {
+    column-gap: 10px;
+}
+.d-flex.c-gap-2 {
+    column-gap: 24px;
+}
+.d-flex.c-gap-3 {
+    column-gap: 48px;
+}
+
+h1.movie-title {
+    font-size: 80px;
+}
+
+/* footer grid */
+.footer-grid {
+  display: grid;
+  row-gap: 50px;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+    "company-logo"
+    "utility-links"
+    "subscribe-area"
+    "socnet-links"
+    "cr-policies";
+}
+
+.utilities-grid {
+  display: grid;
+  row-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "about movies gift-card"
+    "cinemas showtime online-paument"
+    "events services media-center"
+    "careers contact help-center";
+}
+
+@media only screen and (min-width: 786px) {
+  .footer-grid {
+    display: grid;
+    row-gap: 50px;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "company-logo company-logo"
+      "utility-links utility-links"
+      "subscribe-area socnet-links"
+      "cr-policies cr-policies";
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .footer-grid {
+    display: grid;
+    row-gap: 50px;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      "company-logo utility-links subscribe-area"
+      "cr-policies . socnet-links";
+  }
+
+  .company-logo,
+  .cr-policies {
+    justify-self: flex-start;
+  }
+  .subscribe-area,
+  .socnet-links {
+    justify-self: flex-end;
+  }
+}
+
+/* Grid areas utlities links on footer*/
+.about {
+  grid-area: about;
+}
+.movies {
+  grid-area: movies;
+}
+.gift-card {
+  grid-area: gift-card;
+}
+.cinemas {
+  grid-area: cinemas;
+}
+.showtime {
+  grid-area: showtime;
+}
+.online-paument {
+  grid-area: online-paument;
+}
+.events {
+  grid-area: events;
+}
+.services {
+  grid-area: services;
+}
+.media-center {
+  grid-area: media-center;
+}
+.careers {
+  grid-area: careers;
+}
+.contact {
+  grid-area: contact;
+}
+.help-center {
+  grid-area: help-center;
+}
+
+/* grid are in footer*/
+
+.company-logo {
+  grid-area: company-logo;
+}
+.utility-links {
+  grid-area: utility-links;
+}
+.subscribe-area {
+  grid-area: subscribe-area;
+}
+.socnet-links {
+  grid-area: socnet-links;
+}
+.cr-policies {
+  grid-area: cr-policies;
+}

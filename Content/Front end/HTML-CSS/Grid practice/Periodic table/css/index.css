@@ -1,0 +1,702 @@
+.flex {
+  display: flex;
+}
+.column {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.row {
+  flex-direction: row;
+}
+
+.jc-right {
+  justify-content: right;
+}
+
+.jc-ctr {
+  justify-content: center;
+}
+
+.ai-ctr {
+  align-items: center;
+}
+
+.ai-fe {
+  align-items: flex-end;
+}
+
+.gap {
+  grid-gap: 5px;
+}
+
+.title {
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 40px;
+  margin: auto;
+}
+
+.atomic-nr {
+  font-size: 10px;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 10px;
+}
+
+.symbol {
+  font-size: 25px;
+  color: #000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 30px;
+}
+
+.name {
+  font-size: 11px;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 15px;
+}
+
+p {
+  margin: 0;
+}
+
+.number {
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+
+.perdc-table {
+  display: grid;
+  grid-template-columns: repeat(19, 60px);
+  grid-template-rows: repeat(8, 75px) 30px repeat(2, 75px);
+  grid-template-areas:
+    ". square-t01 . . . . . . . . . . . . . . . . square-t18"
+    "square-l01 square-H square-t02 . . . . . . . . . . square-t13 square-t14 square-t15 square-t16 square-t17 square-He"
+    "square-l02 square-Li square-Be . . . . . . . . . . square-B square-C square-N square-O square-F square-Ne"
+    "square-l03 square-Na square-Mg square-t03 square-t04 square-t05 square-t06 square-t07 square-t08 square-t09 square-t10 square-t11 square-t12 square-Al square-Si square-P square-S square-Cl square-Ar"
+    "square-l04 square-K square-Ca square-Sc square-Ti square-V square-Cr square-Mn square-Fe square-Co square-Ni square-Cu square-Zn square-Ga square-Ge square-As square-Se square-Br square-Kr"
+    "square-l05 square-Rb square-Sr square-Y square-Zr square-Nb square-Mo square-Tc square-Ru square-Rh square-Pd square-Ag square-Cd square-In square-Sn square-Sb square-Te square-I square-Xe"
+    "square-l06 square-Cs square-Ba square-Lanth- square-Hf square-Ta square-W square-Re square-Os square-Ir square-Pt square-Au square-Hg square-Tl square-Pb square-Bi square-Po square-At square-Rn"
+    "square-l07 square-Fr square-Ra square-Actin- square-Rf square-Db square-Sg square-Bh square-Hs square-Mt square-Ds square-Rg square-Cn square-Nh square-Fl square-Mc square-Lv square-Ts square-Og"
+    ". . . . . . . . . . . . . . . . . . ."
+    ". square-Lanth square-Lanth square-La square-Ce square-Pr square-Nd square-Pm square-Sm square-Eu square-Gd square-Tb square-Dy square-Ho square-Er square-Tm square-Yb square-Lu ."
+    ". square-Actin square-Actin square-Ac square-Th square-Pa square-U square-Np square-Pu square-Am square-Cm square-Bk square-Cf square-Es square-Fm square-Md square-No square-Lr .";
+}
+
+.red {
+  color: white;
+  background-color: red;
+}
+
+.green {
+  color: black;
+  background-color: green;
+}
+
+.orange {
+  color: white;
+  background-color: orange;
+}
+
+.lightblue {
+  color: black;
+  background-color: lightblue;
+}
+
+.gray {
+  color: black;
+  background-color: gray;
+}
+
+.yellow {
+  color: black;
+  background-color: yellow;
+}
+
+.pink {
+  color: black;
+  background-color: pink;
+}
+
+.blue {
+  color: black;
+  background-color: blue;
+}
+
+.purple {
+  color: black;
+  background-color: violet;
+}
+
+.yellowgreen {
+  color: black;
+  background-color: yellowgreen;
+}
+
+/* Elements placementes on grid*/
+
+.square-H {
+  grid-area: square-H;
+}
+
+.square-He {
+  grid-area: square-He;
+}
+
+.square-Li {
+  grid-area: square-Li;
+}
+
+.square-Be {
+  grid-area: square-Be;
+}
+
+.square-B {
+  grid-area: square-B;
+}
+
+.square-C {
+  grid-area: square-C;
+}
+.square-N {
+  grid-area: square-N;
+}
+
+.square-O {
+  grid-area: square-O;
+}
+.square-F {
+  grid-area: square-F;
+}
+
+.square-Ne {
+  grid-area: square-Ne;
+}
+
+.square-Na {
+  grid-area: square-Na;
+}
+
+.square-Mg {
+  grid-area: square-Mg;
+}
+
+.square-Al {
+  grid-area: square-Al;
+}
+
+.square-Si {
+  grid-area: square-Si;
+}
+
+.square-P {
+  grid-area: square-P;
+}
+
+.square-S {
+  grid-area: square-S;
+}
+
+.square-Cl {
+  grid-area: square-Cl;
+}
+
+.square-Ar {
+  grid-area: square-Ar;
+}
+
+.square-K {
+  grid-area: square-K;
+}
+
+.square-Ca {
+  grid-area: square-Ca;
+}
+
+.square-Sc {
+  grid-area: square-Sc;
+}
+
+.square-Ti {
+  grid-area: square-Ti;
+}
+
+.square-V {
+  grid-area: square-V;
+}
+
+.square-Cr {
+  grid-area: square-Cr;
+}
+
+.square-Mn {
+  grid-area: square-Mn;
+}
+
+.square-Fe {
+  grid-area: square-Fe;
+}
+.square-Co {
+  grid-area: square-Co;
+}
+
+.square-Ni {
+  grid-area: square-Ni;
+}
+
+.square-Cu {
+  grid-area: square-Cu;
+}
+
+.square-Zn {
+  grid-area: square-Zn;
+}
+
+.square-Ga {
+  grid-area: square-Ga;
+}
+
+.square-Ge {
+  grid-area: square-Ge;
+}
+
+.square-As {
+  grid-area: square-As;
+}
+
+.square-Se {
+  grid-area: square-Se;
+}
+
+.square-Br {
+  grid-area: square-Br;
+}
+
+.square-Kr {
+  grid-area: square-Kr;
+}
+
+.square-Rb {
+  grid-area: square-Rb;
+}
+
+.square-Sr {
+  grid-area: square-Sr;
+}
+
+.square-Y {
+  grid-area: square-Y;
+}
+
+.square-Zr {
+  grid-area: square-Zr;
+}
+
+.square-Nb {
+  grid-area: square-Nb;
+}
+
+.square-Mo {
+  grid-area: square-Mo;
+}
+
+.square-Tc {
+  grid-area: square-Tc;
+}
+
+.square-Ru {
+  grid-area: square-Ru;
+}
+
+.square-Rh {
+  grid-area: square-Rh;
+}
+
+.square-Pd {
+  grid-area: square-Pd;
+}
+
+.square-Ag {
+  grid-area: square-Ag;
+}
+
+.square-Cd {
+  grid-area: square-Cd;
+}
+
+.square-In {
+  grid-area: square-In;
+}
+
+.square-Sn {
+  grid-area: square-Sn;
+}
+
+.square-Sb {
+  grid-area: square-Sb;
+}
+
+.square-Te {
+  grid-area: square-Te;
+}
+
+.square-I {
+  grid-area: square-I;
+}
+
+.square-Xe {
+  grid-area: square-Xe;
+}
+
+.square-Cs {
+  grid-area: square-Cs;
+}
+
+.square-Ba {
+  grid-area: square-Ba;
+}
+
+.square-Lanth- {
+  grid-area: square-Lanth-;
+}
+
+.square-Hf {
+  grid-area: square-Hf;
+}
+
+.square-Ta {
+  grid-area: square-Ta;
+}
+
+.square-W {
+  grid-area: square-W;
+}
+
+.square-Re {
+  grid-area: square-Re;
+}
+
+.square-Os {
+  grid-area: square-Os;
+}
+
+.square-Ir {
+  grid-area: square-Ir;
+}
+
+.square-Pt {
+  grid-area: square-Pt;
+}
+
+.square-Au {
+  grid-area: square-Au;
+}
+
+.square-Hg {
+  grid-area: square-Hg;
+}
+
+.square-Tl {
+  grid-area: square-Tl;
+}
+
+.square-Pb {
+  grid-area: square-Pb;
+}
+
+.square-Bi {
+  grid-area: square-Bi;
+}
+
+.square-Po {
+  grid-area: square-Po;
+}
+
+.square-At {
+  grid-area: square-At;
+}
+
+.square-Rn {
+  grid-area: square-Rn;
+}
+
+.square-Fr {
+  grid-area: square-Fr;
+}
+
+.square-Ra {
+  grid-area: square-Ra;
+}
+
+.square-Actin- {
+  grid-area: square-Actin-;
+}
+
+.square-Rf {
+  grid-area: square-Rf;
+}
+
+.square-Db {
+  grid-area: square-Db;
+}
+
+.square-Sg {
+  grid-area: square-Sg;
+}
+
+.square-Bh {
+  grid-area: square-Bh;
+}
+
+.square-Hs {
+  grid-area: square-Hs;
+}
+
+.square-Mt {
+  grid-area: square-Mt;
+}
+
+.square-Ds {
+  grid-area: square-Ds;
+}
+
+.square-Rg {
+  grid-area: square-Rg;
+}
+
+.square-Cn {
+  grid-area: square-Cn;
+}
+
+.square-Nh {
+  grid-area: square-Nh;
+}
+
+.square-Fl {
+  grid-area: square-Fl;
+}
+
+.square-Mc {
+  grid-area: square-Mc;
+}
+
+.square-Lv {
+  grid-area: square-Lv;
+}
+
+.square-Ts {
+  grid-area: square-Ts;
+}
+
+.square-Og {
+  grid-area: square-Og;
+}
+
+.square-La {
+  grid-area: square-La;
+}
+
+.square-Ce {
+  grid-area: square-Ce;
+}
+
+.square-Pr {
+  grid-area: square-Pr;
+}
+
+.square-Nd {
+  grid-area: square-Nd;
+}
+
+.square-Pm {
+  grid-area: square-Pm;
+}
+
+.square-Sm {
+  grid-area: square-Sm;
+}
+
+.square-Eu {
+  grid-area: square-Eu;
+}
+
+.square-Gd {
+  grid-area: square-Gd;
+}
+
+.square-Tb {
+  grid-area: square-Tb;
+}
+
+.square-Dy {
+  grid-area: square-Dy;
+}
+
+.square-Ho {
+  grid-area: square-Ho;
+}
+
+.square-Er {
+  grid-area: square-Er;
+}
+
+.square-Tm {
+  grid-area: square-Tm;
+}
+
+.square-Yb {
+  grid-area: square-Yb;
+}
+
+.square-Lu {
+  grid-area: square-Lu;
+}
+
+.square-Ac {
+  grid-area: square-Ac;
+}
+
+.square-Th {
+  grid-area: square-Th;
+}
+
+.square-Pa {
+  grid-area: square-Pa;
+}
+
+.square-U {
+  grid-area: square-U;
+}
+
+.square-Np {
+  grid-area: square-Np;
+}
+
+.square-Pu {
+  grid-area: square-Pu;
+}
+
+.square-Am {
+  grid-area: square-Am;
+}
+
+.square-Cm {
+  grid-area: square-Cm;
+}
+
+.square-Bk {
+  grid-area: square-Bk;
+}
+
+.square-Cf {
+  grid-area: square-Cf;
+}
+
+.square-Es {
+  grid-area: square-Es;
+}
+
+.square-Fm {
+  grid-area: square-Fm;
+}
+
+.square-Md {
+  grid-area: square-Md;
+}
+
+.square-No {
+  grid-area: square-No;
+}
+
+.square-Lr {
+  grid-area: square-Lr;
+}
+
+.square-Lanth {
+  grid-area: square-Lanth;
+}
+
+.square-Actin {
+  grid-area: square-Actin;
+}
+
+/* Edge number placements on grid */
+
+.square-t01 {
+  grid-area: square-t01;
+}
+.square-t02 {
+  grid-area: square-t02;
+}
+.square-t03 {
+  grid-area: square-t03;
+}
+.square-t04 {
+  grid-area: square-t04;
+}
+.square-t05 {
+  grid-area: square-t05;
+}
+.square-t06 {
+  grid-area: square-t06;
+}
+.square-t07 {
+  grid-area: square-t07;
+}
+.square-t08 {
+  grid-area: square-t08;
+}
+.square-t09 {
+  grid-area: square-t09;
+}
+.square-t10 {
+  grid-area: square-t10;
+}
+.square-t11 {
+  grid-area: square-t11;
+}
+.square-t12 {
+  grid-area: square-t12;
+}
+.square-t13 {
+  grid-area: square-t13;
+}
+.square-t14 {
+  grid-area: square-t14;
+}
+.square-t15 {
+  grid-area: square-t15;
+}
+.square-t16 {
+  grid-area: square-t16;
+}
+.square-t17 {
+  grid-area: square-t17;
+}
+.square-t18 {
+  grid-area: square-t18;
+}
+.square-l01 {
+  grid-area: square-l01;
+}
+.square-l02 {
+  grid-area: square-l02;
+}
+.square-l03 {
+  grid-area: square-l03;
+}
+.square-l04 {
+  grid-area: square-l04;
+}
+.square-l05 {
+  grid-area: square-l05;
+}
+.square-l06 {
+  grid-area: square-l06;
+}
+.square-l07 {
+  grid-area: square-l07;
+}

@@ -1,0 +1,142 @@
+<div class="bgc-yellow">
+            <div class="container">
+                <div class="row">
+                    <div class="column col-12 col-lg-12 mt-5">
+                        <div class="d-flex flex-column justify-content-center">
+                            <div class="skills-title _font-nunito _fs-2">
+                                Services & Prices
+                            </div>
+                            <div
+                                class="skills-text-intro _font-montserrat mt-2 mb-5"
+                            >
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Dolore ad magni in laborum ea
+                                nemo dolores deleniti sed commodi iste beatae
+                                esse porro.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bgc-orange">
+            <div class="container">
+                <div class="row">
+                    <div class="column col-12 col-lg-6 mt-5">
+                        <div
+                            class="d-flex flex-column justify-content-center position-relative"
+                        >
+                            <div class="d-flex _g-1 align-items-end">
+                                <div class="skills-title _font-nunito _fs-2">
+                                    $25.00
+                                </div>
+                                <div
+                                    class="skills-title _font-nunito _fs-3 mb-1"
+                                >
+                                    / hour
+                                </div>
+                            </div>
+                            <div class="skills-title _font-nunito _fs-2">
+                                Lorem Ipsum
+                            </div>
+                            <div
+                                class="skills-text-intro _font-montserrat mt-2 mb-5"
+                            >
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Dolore ad magni in laborum ea
+                                nemo dolores deleniti sed commodi iste beatae
+                                esse porro.
+                            </div>
+                            <div
+                                class="position-absolute _fs-hg pos-coord _font-montserrat z-indx-1"
+                            >
+                                01
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column col-12 col-lg-6 mt-5">
+                        <div class="row">
+                            <div
+                                class="column col-12 col-lg-12 d-flex flex-column justify-content-center position-relative z-indx-3"
+                            >
+                                <div>
+                                    <div class="d-flex _g-1 align-items-end">
+                                        <div
+                                            class="skills-title _font-nunito _fs-2"
+                                        >
+                                            $25.00
+                                        </div>
+                                        <div
+                                            class="skills-title _font-nunito _fs-3 mb-1"
+                                        >
+                                            / hour
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="skills-title _font-nunito _fs-2">
+                                    Lorem Ipsum
+                                </div>
+                                <div
+                                    class="skills-text-intro _font-montserrat mt-2 mb-5"
+                                >
+                                    Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Dolore ad magni in laborum
+                                    ea nemo dolores deleniti sed commodi iste
+                                    beatae esse porro.
+                                </div>
+                            </div>
+                            <div
+                                class="position-absolute _fs-hg pos-coord _font-montserrat z-indx-2"
+                            >
+                                02
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- brown -->
+                            <div
+                                class="column col-12 col-lg-12 mt-5 position-relative"
+                            >
+                                <div
+                                    class="d-flex flex-column justify-content-center position-relative"
+                                >
+                                    <div>
+                                        <div
+                                            class="d-flex _g-1 align-items-end"
+                                        >
+                                            <div
+                                                class="skills-title _font-nunito _fs-2"
+                                            >
+                                                $25.00
+                                            </div>
+                                            <div
+                                                class="skills-title _font-nunito _fs-3 mb-1"
+                                            >
+                                                / hour
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="skills-title _font-nunito _fs-2"
+                                    >
+                                        Lorem Ipsum
+                                    </div>
+                                    <div
+                                        class="skills-text-intro _font-montserrat mt-2 mb-5"
+                                    >
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Dolore ad magni in
+                                        laborum ea nemo dolores deleniti sed
+                                        commodi iste beatae esse porro.
+                                    </div>
+                                    <div
+                                        class="position-absolute _fs-hg pos-coord _font-montserrat"
+                                    >
+                                        03
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

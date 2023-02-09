@@ -1,0 +1,90 @@
+:root {
+    --color-light-purple: rgb(241, 233, 244);
+}
+
+.icon {
+    background-color: rebeccapurple;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.bg-light-purple {
+    background-color: var(--color-light-purple);
+}
+
+.d-flex.gap-3 {
+    gap: 16px;
+}
+
+.grid-option {
+    align-items: center;
+    display: grid;
+    grid-template-areas:
+        "icon title"
+        ". text";
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 60px 1fr;
+}
+
+.grid-option .icon {
+    grid-area: icon;
+    justify-self: center;
+}
+.grid-option .title {
+    grid-area: title;
+}
+.grid-option .text {
+    grid-area: text;
+}
+
+.my-beautiful-container-wrapper {
+    background-color: var(--color-light-purple);
+    padding-bottom: 44px;
+    padding-top: 44px;
+}
+
+.product-picture {
+    background-color: black;
+    height: 100px;
+    width: 150px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.grid-mollit-anim {
+    display: grid;
+    gap: 24px;
+    grid-template-areas:
+        "a b c"
+        "a d d";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+}
+.grid-mollit-anim .a {
+    grid-area: a;
+}
+.grid-mollit-anim .b {
+    grid-area: b;
+}
+.grid-mollit-anim .c {
+    grid-area: c;
+}
+.grid-mollit-anim .d {
+    grid-area: d;
+}
+
+._card {
+    background-color: white;
+}
+.a ._card {
+    height: 400px;
+}
+
+.b ._card,
+.c ._card,
+.d ._card {
+    height: 100%;
+}

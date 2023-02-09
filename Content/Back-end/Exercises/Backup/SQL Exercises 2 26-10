@@ -1,0 +1,79 @@
+
+
+Query 1 --:
+
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  5 (6 total, Query took 0.0022 seconds.)
+
+
+SELECT * FROM `books`
+UNION
+SELECT * FROM novels;
+
+
+id	title	price	author_id	publication_date
+4	Harry Potter 1	40	1	1999-10-11
+5	Harry Potter 3	30	1	2005-10-12
+6	Lord of the rings: the two towers	10	2	1954-02-14
+7	Lord of the rings: the fellowship of the ring	10	2	1954-01-11
+8	Lord of the rings: the return of the king	10	2	1955-05-10
+1	My amazing novel	5	2	1910-10-10
+
+Query 2 --:
+
+SELECT * FROM `books` WHERE publication_date >='2018-01-01' UNION SELECT * FROM novels WHERE publication_date >='2018-01-01';
+
+empty
+
+Query 3 --:
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  2 (3 total, Query took 0.0016 seconds.)
+
+
+SELECT author_id, SUM(price) FROM(SELECT price, author_id FROM books UNION ALL SELECT price, author_id FROM novels) table1 GROUP BY author_id;
+
+
+author_id	SUM(price)
+1	70
+3	30
+2	5
+
+
+
+Query 4 --:
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0011 seconds.)
+
+
+SELECT SUM(price) FROM `books`
+UNION
+SELECT SUM(price) FROM `novels`;
+
+
+SUM(price)
+100
+5
+
+WITH A BETTER DESCRPTION: (we just add a new attribute).
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=authors
+
+   Showing rows 0 -  1 (2 total, Query took 0.0073 seconds.)
+
+
+SELECT 'books' as Origin, SUM(price) FROM `books`
+UNION
+SELECT 'novels' as Origin, SUM(price) FROM `novels`;
+
+
+Origin	SUM(price)
+books	100
+novels	5
+
+

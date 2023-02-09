@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        - create an animal object with the following properties: name, type, age, legs, wings
+        - modify the name, by uppercasing it
+        - depending on the number of wings and legs console log different message:
+        "I have X legs and no wing"
+        "I have X legs and X wings"
+        */
+
+      const animal = {
+        name: "miki",
+        type: "cat",
+        color: "black",
+        legs: 4,
+        wings: 1,
+      };
+      console.log(animal);
+      animal.name = animal.name.toUpperCase();
+      console.log(animal);
+
+      if (animal.wings === 0) {
+        console.log("I have " + animal.legs + " legs and no wings");
+      } else {
+        console.log(
+          "I have " + animal.legs + " legs and " + animal.wings + " wings"
+        );
+        console.log(`I have ${animal.legs} legs and ${animal.wings} wings`);
+      }
+    </script>
+  </body>
+</html>

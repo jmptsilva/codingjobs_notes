@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="mydiv">hello</div>
+    <div class="otherdivs">div with class</div>
+    <div class="otherdivs">div with class</div>
+    <div class="otherdivs">div with class</div>
+    <script>
+      /**
+       * - Select the div with the id, and change the text to "hello John"
+       * - select all the divs with a class and change the background color to red;
+       * */
+
+      const mydiv = document.querySelector("#mydiv");
+      // const mydiv = document.getElementById("mydiv");
+      mydiv.textContent = "hello john";
+
+      const divsWithClass = document.querySelectorAll(".otherdivs");
+      /* divsWithClass[0].style.backgroundColor = "red";
+      divsWithClass[1].style.backgroundColor = "red";
+      divsWithClass[2].style.backgroundColor = "red"; */
+
+      // foreach is not available on getElementsByClassName
+      divsWithClass.forEach(function (element) {
+        element.style.backgroundColor = "red";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.round-corner {
+  border-radius: 10px;
+}
+
+.search-container {
+  background-color: rgb(94, 92, 92);
+}
+
+h1 {
+  color: aliceblue;
+}
+
+.border-r {
+  border-right: 1px solid grey;
+}
+
+.movie-poster img {
+  width: 200px;
+}
+
+.movie-description {
+  width: 60%;
+}
+
+.title-details {
+  font-weight: 700;
+  font-size: larger;
+  margin-bottom: 20px;
+}

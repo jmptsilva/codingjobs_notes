@@ -1,0 +1,315 @@
+
+ -----------------------------------------------
+PART 1
+ -------------------------------------
+
+ 1----------
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/database/sql&db=book_store
+
+   Showing rows 0 -  1 (2 total, Query took 0.0010 seconds.)
+
+
+SELECT * FROM books;
+
+
+id	title	price	author_id	publication_date
+4	Harry Potter 1	12	1	1999-10-11
+5	Harry Potter 3	50	1	2005-10-12
+
+
+ 2-----------
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0005 seconds.)
+
+
+SELECT title FROM `books`;
+
+
+title
+Harry Potter 1
+Harry Potter 3
+
+ 3------------
+
+ localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0007 seconds.)
+
+
+SELECT title, publication_date FROM `books`;
+
+
+title	publication_date
+Harry Potter 1	1999-10-11
+Harry Potter 3	2005-10-12
+
+ ----------
+
+
+ -----------------------------------------------
+PART 2
+ -------------------------------------
+
+ 1----------
+
+ localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/database/sql&db=book_store
+
+   Showing rows 0 -  1 (2 total, Query took 0.0006 seconds.) [title: HARRY POTTER 1... - HARRY POTTER 3...]
+
+
+SELECT title FROM books ORDER BY title ASC;
+
+
+title
+Harry Potter 1
+Harry Potter 3
+
+ 2----------
+
+ localhost:3306/book_store/authors/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=authors
+
+   Showing rows 0 -  1 (2 total, Query took 0.0011 seconds.) [name: HERMAN MELVILLE... - J.K. ROWLING...]
+
+
+SELECT DISTINCT name FROM `authors` ORDER BY name ASC;
+
+
+name
+Herman Melville
+J.K. Rowling
+
+ -----------------------------------------------
+PART 3
+ -------------------------------------
+
+ 1----------
+
+ localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  0 (1 total, Query took 0.0010 seconds.)
+
+
+SELECT * FROM `books` WHERE id = 5;
+
+ 2----------
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  0 (1 total, Query took 0.0007 seconds.)
+
+
+SELECT * FROM `books` WHERE publication_date>'2000-01-01' AND publication_date<'2010-01-01';
+
+
+
+5	Harry Potter 3	50	1	2005-10-12
+
+
+
+ 3----------
+
+ localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  0 (1 total, Query took 0.0007 seconds.)
+
+
+SELECT * FROM `books` WHERE publication_date<'2000-01-01' OR publication_date>'2010-01-01';
+
+
+
+4	Harry Potter 1	12	1	1999-10-11
+
+ -----------------------------------------------
+PART 4
+ -------------------------------------
+
+ 1----------
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  2 (3 total, Query took 0.0017 seconds.)
+
+
+SELECT * FROM `books` WHERE title LIKE 'Lord of the rings%';
+
+
+id	title	price	author_id	publication_date
+6	Lord of the rings: the two towers	20	3	1954-02-14
+7	Lord of the rings: the fellowship of the ring	20	3	1954-01-11
+8	Lord of the rings: the return of the king	20	3	1955-05-10
+
+
+ 2----------
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  2 (3 total, Query took 0.0010 seconds.)
+
+
+SELECT * FROM `books` WHERE author_id=3;
+
+
+id	title	price	author_id	publication_date
+6	Lord of the rings: the two towers	20	3	1954-02-14
+7	Lord of the rings: the fellowship of the ring	20	3	1954-01-11
+8	Lord of the rings: the return of the king	20	3	1955-05-10
+
+ 3----------
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0012 seconds.)
+
+
+SELECT * FROM `books` WHERE NOT author_id=3;
+
+
+id	title	price	author_id	publication_date
+4	Harry Potter 1	12	1	1999-10-11
+5	Harry Potter 3	50	1	2005-10-12
+
+ -----------------------------------------------
+PART 5
+ -------------------------------------
+
+ 1----------
+
+ localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  4 (5 total, Query took 0.0006 seconds.) [publication_date: 2005-10-12... - 1954-01-11...]
+
+
+SELECT * FROM `books` ORDER BY publication_date DESC;
+
+
+id	title	price	author_id	publication_date
+5	Harry Potter 3	50	1	2005-10-12
+4	Harry Potter 1	12	1	1999-10-11
+8	Lord of the rings: the return of the king	20	3	1955-05-10
+6	Lord of the rings: the two towers	20	3	1954-02-14
+7	Lord of the rings: the fellowship of the ring	20	3	1954-01-11
+
+ 2----------
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0011 seconds.)
+
+
+SELECT author_id, COUNT(*) FROM `books` GROUP BY author_id;
+
+
+author_id	COUNT(*)
+1	2
+2	3
+
+
+-----------------------------------------------
+PART 6
+ -------------------------------------
+
+ 1----------
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  4 (5 total, Query took 0.0011 seconds.) [publication_date: 1954-01-11... - 2005-10-12...]
+
+
+SELECT * FROM `books` ORDER BY publication_date LIMIT 5;
+
+
+id	title	price	author_id	publication_date
+7	Lord of the rings: the fellowship of the ring	10	2	1954-01-11
+6	Lord of the rings: the two towers	10	2	1954-02-14
+8	Lord of the rings: the return of the king	10	2	1955-05-10
+4	Harry Potter 1	40	1	1999-10-11
+5	Harry Potter 3	30	1	2005-10-12
+
+
+ 2----------
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  3 (4 total, Query took 0.0008 seconds.) [publication_date: 2005-10-12... - 1954-02-14...]
+
+
+SELECT * FROM `books` ORDER BY publication_date DESC LIMIT 4;
+
+
+id	title	price	author_id	publication_date
+5	Harry Potter 3	30	1	2005-10-12
+4	Harry Potter 1	40	1	1999-10-11
+8	Lord of the rings: the return of the king	10	2	1955-05-10
+6	Lord of the rings: the two towers	10	2	1954-02-14
+
+ -----------------------------------------------
+PART 7
+ -------------------------------------
+
+ 1----------
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  0 (1 total, Query took 0.0008 seconds.)
+
+
+SELECT SUM(price) AS Total FROM `books`;
+
+
+Total
+122
+
+ 2----------
+
+localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0011 seconds.)
+
+
+SELECT author_id, SUM(price) AS Total FROM `books` GROUP BY author_id;
+
+
+author_id   Total
+1           62
+2           60
+
+ -----------------------------------------------
+PART 8
+ -------------------------------------
+
+ 1----------
+
+ localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/sql&db=book_store&table=books&pos=0
+
+   Showing rows 0 -  4 (5 total, Query took 0.0005 seconds.)
+
+
+UPDATE books SET price = 10 WHERE author_id = 2
+
+
+id	title	price	author_id	publication_date
+4	Harry Potter 1	35	1	1999-10-11
+5	Harry Potter 3	25	1	2005-10-12
+6	Lord of the rings: the two towers	10	2	1954-02-14
+7	Lord of the rings: the fellowship of the ring	10	2	1954-01-11
+8	Lord of the rings: the return of the king	10	2	1955-05-10
+
+
+ 2----------
+
+ localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/sql&server=1&db=book_store&table=books&pos=0
+
+   Showing rows 0 -  4 (5 total, Query took 0.0005 seconds.)
+
+UPDATE books SET price = price + 5 WHERE author_id = 1
+
+id	title	price	author_id	publication_date
+4	Harry Potter 1	40	1	1999-10-11
+5	Harry Potter 3	30	1	2005-10-12
+6	Lord of the rings: the two towers	10	2	1954-02-14
+7	Lord of the rings: the fellowship of the ring	10	2	1954-01-11
+8	Lord of the rings: the return of the king	10	2	1955-05-10
+

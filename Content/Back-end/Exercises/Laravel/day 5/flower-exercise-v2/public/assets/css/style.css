@@ -1,0 +1,7 @@
+.alert-success {
+    color: green;
+}
+
+.alert-error, .alert-danger {
+    color: red;
+}

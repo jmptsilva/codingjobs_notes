@@ -1,0 +1,97 @@
+/* layout classes-rules */
+
+* {
+  margin: 0;
+}
+
+/* flex classes-rules */
+.flex {
+  display: flex;
+}
+.flex.col {
+  flex-direction: column;
+}
+.flex.row {
+  flex-direction: row;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+
+/* alignment classes-rules */
+.ac-center {
+  align-content: center;
+}
+.ac-fs {
+  align-content: flex-start;
+}
+.ac-fe {
+  align-content: flex-end;
+}
+.ac-sb {
+  align-content: space-between;
+}
+.ac-sa {
+  align-content: space-around;
+}
+.ac-se {
+  align-content: space-evenly;
+}
+.ac-stretch {
+  align-content: stretch;
+}
+
+.ai-center {
+  align-items: center;
+}
+.ai-fe {
+  align-items: flex-end;
+}
+.ai-fs {
+  align-items: flex-start;
+}
+.ai-fs {
+  align-items: flex-start;
+}
+
+
+/* justify classes-rules */
+.jc-fe {
+  justify-content: flex-end;
+}
+.jc-fs {
+  justify-content: flex-start;
+}
+.jc-center {
+  justify-content: center;
+}
+.jc-sa {
+  justify-content: space-around;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+.jc-se {
+  justify-content: space-evenly;
+}
+.jc-stretch {
+  justify-content: stretch;
+}
+
+.flex.center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* spacing classes-rules */
+.gap-0 {
+  grid-gap: 5px;
+}
+.gap-1 {
+  grid-gap: 10px;
+}
+.gap-2 {
+  grid-gap: 15px;
+}

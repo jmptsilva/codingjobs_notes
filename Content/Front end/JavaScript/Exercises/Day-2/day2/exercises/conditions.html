@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * Secret number:
+       * - Declare a variable secretNumber (choose the number)
+       * - prompt the user for a number
+       * - test if the number equals the secret number, display something in the console, if yes
+       *
+       * - add two more conditions using "else if" which check if it's > or < the secret nb and inform the user accordingly (with a console.log)
+       * */
+      const secretNb = 50;
+      // we prompt and convert the string to a number
+      const nb = parseInt(prompt("give me a number"));
+      console.log(typeof nb, nb);
+
+      if (nb === secretNb) {
+        console.log("you won!");
+      } else if (nb > secretNb) {
+        console.log("too high!");
+      } else if (nb < secretNb) {
+        console.log("too low!");
+      } else {
+        console.log("please enter a number");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+.display-grid {
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  grid-template-rows: repeat(6, auto);
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-areas:
+    "phones"
+    "phones"
+    "phone"
+    "watch"
+    "computer"
+    "computer";
+}
+
+@media screen and (min-width: 768px) {
+  .display-grid {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "phones phone"
+      "phones watch"
+      "computer computer";
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .display-grid {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "phones phone watch"
+      "phones computer computer";
+  }
+}
+
+.bgc-container {
+  background-color: lightpink;
+}
+
+.phones {
+  grid-area: phones;
+  height: 100%;
+}
+
+.phone {
+  grid-area: phone;
+}
+
+.watch {
+  grid-area: watch;
+}
+
+.computer {
+  grid-area: computer;
+}
+
+.button {
+  width: 80px;
+}
+
+.phone-image {
+  height: 60px;
+}
+
+.phones-image {
+  height: 90px;
+}
+
+.watch-image {
+  height: 60px;
+}
+
+.comp-image {
+  height: 90px;
+  width: 100px;
+}
+
+.phones, .phone, .watch, .computer {
+  padding: 10px;
+  row-gap: 10px;
+  background-color: white;
+}
+
+.computer-text {
+  row-gap: 10px;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}

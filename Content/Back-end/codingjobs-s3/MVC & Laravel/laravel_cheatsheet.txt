@@ -1,0 +1,27 @@
+- run the server : php artisan serve
+- Controller : php artisan make:controller SongController
+Using resource flag : php artisan make:controller SongController --resource
+
+- Clear the cache :
+    - composer dump-autoload
+    - php artisan cache:clear
+
+- Migrations :
+    * Create migration : php artisan make:migration create_movies_table
+    * Run migration : php artisan migrate
+    * Refresh migration : php artisan migrate:refresh
+
+- Seeders :
+    * Create seeders : php artisan make:seeder MovieSeeder
+    * Run seeder : php artisan db:seed
+
+- Migrate + Seed : 
+    * php artisan migrate --seed
+    * php artisan migrate:refresh --seed
+
+- Create a custom request class :
+    * php artisan make:request StoreFlowerRequest 
+
+- Create a model :
+    * php artisan make:model Flower
+    * php artisan make:model CustomUser

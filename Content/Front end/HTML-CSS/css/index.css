@@ -1,0 +1,7 @@
+.container {
+    background-color: palegoldenrod;
+    border: 1px solid black;
+    margin: 40px;
+    padding: 40px;
+    width: 500px;
+}

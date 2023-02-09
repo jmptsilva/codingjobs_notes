@@ -1,0 +1,428 @@
+Part 1:
+
+- For each book, Retrieve its title and the name of the author
+
+	SELECT b.title, a.name
+	FROM books b
+	INNER JOIN authors a ON b.author_id = a.id
+
+- For each book, get all the information about it and the name of the author
+
+   localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  4 (5 total, Query took 0.0016 seconds.)
+
+
+   SELECT b.*, a.name
+      FROM books b
+      INNER JOIN authors a ON b.author_id = a.id;
+
+
+   id	title	price	author_id	publication_date	name
+   4	Harry Potter 1	40	1	1999-10-11	J.K. Rowling
+   5	Harry Potter 3	30	1	2005-10-12	J.K. Rowling
+   6	Lord of the rings: the two towers	10	3	1954-02-14	J. R. R. Tolkien
+   7	Lord of the rings: the fellowship of the ring	10	3	1954-01-11	J. R. R. Tolkien
+   8	Lord of the rings: the return of the king	10	3	1955-05-10	J. R. R. Tolkien
+
+
+- Get the title of each book and the name of the author, sorted alphabetically on the title of the book.
+
+
+   localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  4 (5 total, Query took 0.0017 seconds.) [title: HARRY POTTER 1... - LORD OF THE RINGS: THE TWO TOWERS...]
+
+
+   SELECT b.title, a.name
+   FROM books b
+   INNER JOIN authors a ON b.author_id = a.id
+   ORDER BY b.title;
+
+
+   title   	name
+   Harry Potter 1	J.K. Rowling
+   Harry Potter 3	J.K. Rowling
+   Lord of the rings: the fellowship of the ring	J. R. R. Tolkien
+   Lord of the rings: the return of the king	J. R. R. Tolkien
+   Lord of the rings: the two towers	J. R. R. Tolkien
+
+- Same but sorted on the author's name.
+
+   localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  4 (5 total, Query took 0.0012 seconds.) [name: J. R. R. TOLKIEN... - J.K. ROWLING...]
+
+
+   SELECT b.title, a.name
+   FROM books b
+   INNER JOIN authors a ON b.author_id = a.id
+   ORDER BY a.name;
+
+
+   title	name
+   Lord of the rings: the two towers	J. R. R. Tolkien
+   Lord of the rings: the fellowship of the ring	J. R. R. Tolkien
+   Lord of the rings: the return of the king	J. R. R. Tolkien
+   Harry Potter 1	J.K. Rowling
+   Harry Potter 3	J.K. Rowling
+
+
+Part 2:
+
+- Collect the number of books by author (with the name of the author)
+
+   localhost:3306/book_store/a/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0017 seconds.)
+
+
+   SELECT COUNT(b.title) as 'Nbr of books', a.name
+   FROM books b
+   INNER JOIN authors a ON b.author_id = a.id
+   GROUP BY a.name;
+
+
+   Nbr of books	name
+   2	J.K. Rowling
+   3	J. R. R. Tolkien
+
+
+Part 3:
+
+- Get the sum of the price of all the books for one specific author (you choose which one)
+
+   localhost:3306/book_store/a/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  0 (1 total, Query took 0.0014 seconds.)
+
+
+   SELECT SUM(b.price) as Total, a.name
+   FROM books b
+   INNER JOIN authors a ON b.author_id = a.id
+   WHERE a.id = 3;
+
+
+   30	J. R. R. Tolkien
+
+
+- Get the sum of price of all books by author
+
+   localhost:3306/book_store/a/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0018 seconds.)
+
+
+   SELECT SUM(b.price) as Total, a.name
+   FROM books b
+   INNER JOIN authors a ON b.author_id = a.id
+   GROUP by a.name;
+
+
+   Total	name
+   70	J.K. Rowling
+   30	J. R. R. Tolkien
+
+
+   RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR-------- PART 2 -------RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
+
+Part 1 :
+
+	- Retrieve books that are under 50 years old (released less than 50 years ago).
+
+   localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0013 seconds.)
+
+
+   SELECT title, YEAR(publication_date) AS pubDate
+   FROM books
+   WHERE YEAR(CURRENT_DATE) - YEAR(publication_date) <= 50;
+
+
+   title	pubDate
+   Harry Potter 1	1999
+   Harry Potter 3	2005
+
+
+	- Retrieve all the authors that are Female (gender)
+
+	localhost:3306/book_store/authors/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=authors
+
+   Showing rows 0 -  0 (1 total, Query took 0.0008 seconds.)
+
+
+SELECT name, gender
+FROM `authors`
+WHERE gender = 'female';
+
+
+
+J.K. Rowling	Female
+
+
+Part 2:
+
+	- Get all the books from the author "JK Rowling"
+
+	localhost:3306/book_store/authors/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=authors
+
+   Showing rows 0 -  0 (1 total, Query took 0.0007 seconds.)
+
+
+   SELECT name
+   FROM `authors`
+   WHERE name LIKE 'J.K. Rowling%';
+
+
+
+   J.K. Rowling
+
+
+- Get all the author's books that are not "JK Rowling"
+
+  localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  2 (3 total, Query took 0.0014 seconds.)
+
+
+   SELECT b.title, a.name
+      FROM books b
+      INNER JOIN authors a ON b.author_id = a.id
+      WHERE name NOT LIKE '%J.K. Rowling%';
+
+
+   title	name
+   Lord of the rings: the two towers	J. R. R. Tolkien
+   Lord of the rings: the fellowship of the ring	J. R. R. Tolkien
+   Lord of the rings: the return of the king	J. R. R. Tolkien
+
+
+- Retrieve all books whose author has the letter 's' in his name or first name.
+
+
+   SELECT b.title, a.name FROM books b INNER JOIN authors a ON b.author_id = a.id WHERE a.name LIKE '%s%';
+
+Part 3:
+
+	- Retrieve the chepeast book with author's name
+
+      localhost:3306/book_store/authors/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=authors
+
+   Showing rows 0 -  2 (3 total, Query took 0.0011 seconds.) [price: 40... - 10...]
+
+
+   SELECT b.title, b.price, a.name
+   FROM books b
+   INNER JOIN authors a ON b.author_id = a.id
+   ORDER BY b.price DESC LIMIT 3;
+
+
+   title	price   	name
+   Harry Potter 1	40	J.K. Rowling
+   Harry Potter 3	30	J.K. Rowling
+   Lord of the rings: the two towers	10	J. R. R. Tolkien
+
+- Retrieve the most expansive book with author's name
+
+   localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=authors
+
+   Showing rows 0 -  0 (1 total, Query took 0.0031 seconds.) [price: 40... - 40...]
+
+
+   SELECT b.title, b.price, a.name
+   FROM books b
+   INNER JOIN authors a ON b.author_id = a.id
+   ORDER BY b.price DESC LIMIT 1;
+
+
+
+   Harry Potter 1	40	J.K. Rowling
+
+
+- Retrieve the 3 most expansive books with author's name
+
+   localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=authors
+
+      Showing rows 0 -  2 (3 total, Query took 0.0014 seconds.) [price: 40... - 10...]
+
+
+   SELECT b.title, b.price, a.name
+   FROM books b
+   INNER JOIN authors a ON b.author_id = a.id
+   ORDER BY b.price DESC LIMIT 3;
+
+
+   title	price   	name
+   Harry Potter 1	40	J.K. Rowling
+   Harry Potter 3	30	J.K. Rowling
+   Lord of the rings: the two towers	10	J. R. R. Tolkien
+
+
+Part 4:
+	- Get all the books from the youngest to the oldest author
+
+	localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=authors
+
+   Showing rows 0 -  4 (5 total, Query took 0.0023 seconds.)
+
+
+   SELECT b.title, a.birth_year, a.name
+   FROM books b
+   INNER JOIN authors a ON b.author_id = a.id
+   ORDER BY (YEAR(CURRENT_DATE) - a.birth_year) ASC;
+
+
+   title	birth_year	name
+   Harry Potter 1	1965	J.K. Rowling
+   Harry Potter 3	1965	J.K. Rowling
+   Lord of the rings: the two towers	1921	J. R. R. Tolkien
+   Lord of the rings: the fellowship of the ring	1921	J. R. R. Tolkien
+   Lord of the rings: the return of the king	1921	J. R. R. Tolkien
+
+   OR EASIER: JUST SORT BY DATE OF BIRTH (DUH!)
+
+   localhost:3306/book_store/books/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  4 (5 total, Query took 0.0019 seconds.) [birth_year: 1965... - 1921...]
+
+
+   SELECT b.title, a.birth_year, a.name
+      FROM books b
+      INNER JOIN authors a ON b.author_id = a.id
+      ORDER BY a.birth_year DESC;
+
+
+   title	birth_year   	name
+   Harry Potter 1	1965	J.K. Rowling
+   Harry Potter 3	1965	J.K. Rowling
+   Lord of the rings: the two towers	1921	J. R. R. Tolkien
+   Lord of the rings: the fellowship of the ring	1921	J. R. R. Tolkien
+   Lord of the rings: the return of the king	1921	J. R. R. Tolkien
+
+
+
+	- Retrieve the number of books by author (with the name of the author)
+
+	localhost:3306/book_store/a/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0025 seconds.)
+
+
+SELECT COUNT(b.title), a.name
+   FROM books b
+   INNER JOIN authors a ON b.author_id = a.id
+   GROUP BY a.name;
+
+
+COUNT(b.title)	name
+2	J.K. Rowling
+3	J. R. R. Tolkien
+
+
+Part 6:
+	- Get the sum of price for all the books from the author 'JK Rowling'
+
+	localhost:3306/book_store/a/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  0 (1 total, Query took 0.0018 seconds.)
+
+   SELECT SUM(b.price), a.name
+      FROM books b
+      INNER JOIN authors a ON b.author_id = a.id
+      WHERE a.name = 'J.K. Rowling';
+
+
+
+   70	J.K. Rowling
+
+
+- Get the sum of price for all books by author
+
+	localhost:3306/book_store/a/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0012 seconds.)
+
+
+   SELECT SUM(b.price), a.name
+      FROM books b
+      INNER JOIN authors a ON b.author_id = a.id
+      GROUP by a.name;
+
+
+   SUM(b.price)	name
+   70	J.K. Rowling
+   30	J. R. R. Tolkien
+
+
+- Get average price of all books by author
+
+	localhost:3306/book_store/a/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0017 seconds.)
+
+
+   SELECT AVG(b.price), a.name
+      FROM books b
+      INNER JOIN authors a ON b.author_id = a.id
+      GROUP by a.name;
+
+
+   AVG(b.price)	name
+   35	J.K. Rowling
+   10	J. R. R. Tolkien
+
+
+- Get the sum of the price of all books by gender
+
+	localhost:3306/book_store/a/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  1 (2 total, Query took 0.0013 seconds.)
+
+
+   SELECT SUM(b.price), a.gender
+      FROM books b
+      INNER JOIN authors a ON b.author_id = a.id
+      GROUP by a.gender;
+
+
+   SUM(b.price)	gender
+   70	Female
+   30	Male
+
+
+Part 7:
+
+- Get the author who makes the highest number of sales.
+
+   localhost:3306/book_store/a/		http://localhost/phpmyadmin/index.php?route=/table/sql&db=book_store&table=books
+
+   Showing rows 0 -  0 (1 total, Query took 0.0014 seconds.)
+
+
+   SELECT SUM(b.sales), a.name
+   FROM books b
+   INNER JOIN authors a ON b.author_id = a.id
+   ORDER BY SUM(b.sales) DESC LIMIT 1;
+
+
+
+   73229618	J.K. Rowling
+
+
+- Retrieve gender that has more than 3 books
+
+   SELECT COUNT(b.title), a.gender FROM books b INNER JOIN authors a ON b.author_id = a.id GROUP BY a.gender HAVING COUNT(b.title) > 3;
+
+
+
+Part 8:
+
+	- All JK Rowling's books have made 20 more sells. Update these books.
+
+   UPDATE books b INNER JOIN authors a ON b.author_id = a.id SET b.sales = b.sales + 20 WHERE a.name = 'J.K. Rowling';
+
+   // the SET always comes after the INNER JOIN
+
+
+
